@@ -1,6 +1,10 @@
+
 import PropTypes from 'prop-types'
 
 export function Movie({movie}){
+
+    
+
     return(
         <li>{movie.name}</li>  
     )
