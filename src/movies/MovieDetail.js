@@ -9,17 +9,16 @@ export function MovieDetail() {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
 
-  const getMovie = async () => {
-    try {
-      const res = await fetch(BASE_URL + id + API_KEY);
-      const newMovie = await res.json();
-      setMovie(newMovie);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   useEffect(() => {
+    const getMovie = async () => {
+      try {
+        const res = await fetch(BASE_URL + id + API_KEY);
+        const newMovie = await res.json();
+        setMovie(newMovie);
+      } catch (e) {
+        console.error(e);
+      }
+    };
     getMovie();
   }, [id]);
 
